@@ -28,7 +28,6 @@
       {{Form::label('email','Email')}}
       {{Form::text('email','',['class' => 'form-control','placeholder' => $email, 'readonly'])}}
     </div>
-
     <div class="form-group">
         {{Form::label('body','Body')}}
         {{Form::textarea('body','',[ 'class' => 'form-control','placeholder' => 'Body Text'])}}

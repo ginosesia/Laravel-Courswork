@@ -50,8 +50,6 @@ class User extends Authenticatable
     }
     
 
-    public static function getUnreadCommentsCount() {
-        return CommentCreated::query()->where('name', Auth::user()->name)->where('status', 'unread')->count();
-    }
+
 
 }

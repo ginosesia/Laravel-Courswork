@@ -128,7 +128,8 @@
                       <hr style="margin: 8px 0 8px 0;">
                       <li><a href="/home">Dashboard</a></li>
                       <li><a href="/profile">Profile</a></li>
-
+                      <li><a href="/tags">Tags</a></li>
+                      <hr style="margin: 8px 0 8px 0;">
                       <li>
                           <a href="{{ route('logout') }}"
                               onclick="event.preventDefault();

@@ -18,6 +18,9 @@ Route::get('/about', 'PagesController@about');
 Route::get('/profile', function() {
     return view('profile');
 })->name('post');
+Route::get('/tags', function() {
+    return view('tags');
+})->name('post');
 Route::resource('posts', 'PostsController');
 Route::resource('comments', 'CommentsController');
 Route::resource('notifications', 'Notifications');
@@ -30,5 +33,6 @@ Route::get('clearAllNotifications', function() {
     return redirect()->back();
 })->name('clearAll');
 Route::post('comments{post_id}',['uses' => 'CommentsController@store', 'as' => 'comments.store']);
+Route::resource('tags', 'TagController', ['except' => ['create']]);
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

@@ -17,7 +17,7 @@
         </div>
       </div>
       <br>
-      <div class="col-md-4" style="margin-top: 0">
+      <div class="col-md-4" style="margin-top: 0;">
         <div class="row">
           <div class="col-md-7">
             <dl class="dl-horizontal">
@@ -60,6 +60,9 @@
     </div>
   </div>
 </div>
+  <div class="body_container" style="margin-top: 20px; margin-right:0;">
+    Tags
+  </div>
   <hr>
     @if(count($comments) > 0)
     @foreach ($comments as $comment)

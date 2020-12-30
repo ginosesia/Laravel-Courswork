@@ -77,6 +77,7 @@ class PostsController extends Controller
         $post->user_id = auth()->user()->id;
         $post->image = $filenameToStore;
         $post->save();
+
         return redirect('/posts')->with('success','Post Created');
     }
 
