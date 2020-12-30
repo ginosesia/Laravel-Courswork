@@ -22,16 +22,16 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
       <i class="fa fa-bell" style="padding: 0; margin-right: 7px;"></i>
       @if(auth()->user()->unreadnotifications->count() > 0)
-      <span class="badge bg-secondary"> {{auth()->user()->unreadnotifications->count()}}</span>
+      <?php
+      $numberofnotifications = auth()->user()->unreadNotifications->where('name','!=', Auth::user()->name);
+      ?>
+      <span class="badge bg-secondary"> </span>
       @endif
     </a>
     <ul class="dropdown-menu"  role="menu">
       @if(auth()->user()->unreadNotifications->count() == 0 && auth()->user()->readNotifications->count() == 0)
         <h6>No Notifications</h6>
       @endif
-<?php
-      $numberofnotifications = auth()->user()->unreadNotifications::where('name', Auth::user()->name)->count();
-?>
       @if(auth()->user()->unreadNotifications->count() > 0)
       <h6>Notifications:</h6>
           @foreach (auth()->user()->unreadNotifications as $notification)
@@ -44,6 +44,7 @@
                     </div>
                     <div class="col-md-9">
                       <div class="row" style="margin-left: 2px;">
+                        {{-- {{dd($notification)}} --}}
                         <li>{{$notification->data['message']}}</li>
                         <li><small>{{$notification->data['data']['body']}}</small></li>
                       </div>
@@ -131,6 +132,13 @@
     </div> 
   </div>
 </nav>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+
+{{dd($numberofnotifications)}}
 
 <style>
 
