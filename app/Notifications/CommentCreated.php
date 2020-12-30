@@ -66,6 +66,11 @@ class CommentCreated extends Notification
         ];
     }
 
+    public static function query() {
+
+        return 3;
+    }
+
     /**
      * Get the array representation of the notification.
      *

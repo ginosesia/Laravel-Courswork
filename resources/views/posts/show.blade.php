@@ -11,7 +11,7 @@
         <div class="body_container">
           <p>{{$post->body}}
           @if($post->image != "noImage.jpg")<br><br>
-            <img style="width: 60%; padding: 10px;" src="/storage/images/{{$post->image}}">
+            <img alt="Included post image: Failed to load!" style="width: 60%; padding: 10px;" src="/storage/images/{{$post->image}}">
             </p>
           @endif
         </div>
@@ -30,7 +30,7 @@
             </dl>
           </div>
           <div class="col-md-5">
-            <img src="{{"https://www.gravatar.com/avatar/" . md5(strtolower(trim($post->email))) . "?s=50&d=wavatar"}}" class="author-post-image">
+            <img alt="profile picture" src="{{"https://www.gravatar.com/avatar/" . md5(strtolower(trim($post->email))) . "?s=50&d=wavatar"}}" class="author-post-image">
           </div>
       </div>
         <dl class="dl-horizontal">
@@ -82,7 +82,7 @@
               <div class="col-md-11">
                   <div class="comment">
                       <div class="author-info">
-                        <img src="{{"https://www.gravatar.com/avatar/" . md5(strtolower(trim($comment->email))) . "?s=50&d=wavatar"}}" class="author-image">
+                        <img alt="profile picture" src="{{"https://www.gravatar.com/avatar/" . md5(strtolower(trim($comment->email))) . "?s=50&d=wavatar"}}" class="author-image">
                           <div class="author-name">
                             <h4>{{$comment->name}}</h4>
                             <p class="author-time">{{$comment->created_at}}</p>  
@@ -220,7 +220,6 @@ width: 80px;
 height: 80px;
 border-radius: 50%;
 float: right;
-
 }
 
 div.col-md-4 {
@@ -231,8 +230,6 @@ div.col-md-4 {
   border-style: solid;
   border-color: lightgray;
 }
-
-
 
 div.comment {
 margin: 5px;

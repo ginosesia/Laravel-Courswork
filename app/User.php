@@ -5,6 +5,10 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Notification;
+use App\Notifications\CommentCreated;
+
+
 
 class User extends Authenticatable
 {
@@ -44,6 +48,10 @@ class User extends Authenticatable
     public function comments() {
         return $this->hasMany('App\Comment');
     }
+    
 
+    public static function getUnreadCommentsCount() {
+        return CommentCreated::query()->where('name', Auth::user()->name)->where('status', 'unread')->count();
+    }
 
 }

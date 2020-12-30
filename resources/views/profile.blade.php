@@ -23,7 +23,8 @@
             ?>
             <div class="row">
                 <div class="col-md-3">
-                    <img src="{{"https://www.gravatar.com/avatar/" . md5(strtolower(trim($email)))."?s=50&d=wavatar"}}" class="profile-img">
+                    <img src="{{"https://www.gravatar.com/avatar/" . md5(strtolower(trim($email)))."?s=50&d=wavatar"}}" 
+                    class="profile-img">
                 </div>
                 <div class="col-md-9">
                     <div class="row">
@@ -31,7 +32,8 @@
                             {{Form::label('name', 'Name:')}}
                         </div>
                         <div class="col-md-4">
-                            {{Form::text('name', $name, ['class' => 'form-control', 'style' => 'margin-bottom: 5px; background: none;', 'readonly'])}}
+                            {{Form::text('name', $name, ['class' => 'form-control', 'style' => 'margin-bottom: 5px; background: none;'
+                            , 'readonly'])}}
                         </div>
                     </div>
                     <div class="row">
@@ -39,7 +41,8 @@
                             {{Form::label('email', 'Email:')}}
                         </div>
                         <div class="col-md-4">
-                            {{Form::text('email', $email, ['class' => 'form-control', 'style' => 'margin-bottom: 5px; background: none;', 'readonly'])}}
+                            {{Form::text('email', $email, ['class' => 'form-control', 'style' => 'margin-bottom: 5px; background: none;'
+                            , 'readonly'])}}
                         </div>
                     </div>
                     <div class="row">
@@ -47,7 +50,8 @@
                             {{Form::label('role', 'Role:')}}
                         </div>
                         <div class="col-md-4">
-                            {{Form::text('role', $role, ['class' => 'form-control', 'style' => 'margin-bottom: 5px; background: none;', 'readonly'])}}
+                            {{Form::text('role', $role, ['class' => 'form-control', 'style' => 'margin-bottom: 5px; background: none;'
+                            , 'readonly'])}}
                         </div>
                     </div>
                 </div>
