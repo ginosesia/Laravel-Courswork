@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\Comment;
 use App\User;
+use App\Tag;
+
 
 
 
@@ -158,6 +160,9 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+        $tag = Tag::find($id);
+        $tag->delete();
+
         if(auth()->user()->id == $post->user_id || auth()->user()->role == 'Admin') {
             $post->delete();
             return redirect('/posts')->with('success','Post Removed');

@@ -60,8 +60,20 @@
     </div>
   </div>
 </div>
-  <div class="body_container" style="margin-top: 20px; margin-right:0;">
-    Tags
+  <div class="body_container" style="margin-top: 20px; margin-right:0; background: none; border: none;">
+    <?php
+      use App\Post;
+      use App\Tag;
+      $user = Auth::user();
+      $tags = Tag::all();
+    ?>
+
+    @foreach ($tags as $tag)
+      @if($tag->post_id == $post->id)
+        <b>{{$tag->name}}</b>
+      @endif
+    @endforeach
+ 
   </div>
   <hr>
     @if(count($comments) > 0)
@@ -116,12 +128,9 @@
           </div>
           @endif
       @endforeach
+
     @else
-    <div class="well1" style="padding: 0">
-    <div class="comment" style="text-align: center">
-        <p>No comments</p>
-    </div>
-    </div>
+
     @endif
     @if(!Auth::guest())
       <div class="commentClass">
@@ -163,6 +172,13 @@
 
 .row {
 margin-top: 0px;
+}
+
+
+b{
+  background: #e0dada;
+  padding: 5px 10px 5px 10px;
+  border-radius: 7px;
 }
 
 .body_container {

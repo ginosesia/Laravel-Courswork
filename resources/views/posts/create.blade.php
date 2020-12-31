@@ -4,7 +4,7 @@
 
     <h2>Create Post
       <div class="float-right">
-        <a href="/posts" class="btn btn-default">Back</a>
+        <a href="/posts" class="btn btn-default">Back to Posts</a>
       </div>
     </h2>
   <br>

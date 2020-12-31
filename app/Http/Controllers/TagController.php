@@ -20,7 +20,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        $tags = Tag::all();
+        $tags = Tag::orderBy('created_at','desc')->paginate(10);
         return view('/tags')->with('tags', $tags);    
     }
 
@@ -37,6 +37,7 @@ class TagController extends Controller
         $tag = new Tag;
         $tag->name = $request->name;
         $tag->post_id = $request->post;
+        $tag->user_id = auth()->user()->id;
         $tag->save();
 
         return redirect('/tags')->with('success','Tag Created');
@@ -51,31 +52,11 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        //
+        $tag = Tag::find($id);
+        return view('tags.show')->withTag($tag);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -85,6 +66,8 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        return ('removed');
-    }
+        $tag = Tag::find($id);
+        $tag->delete();
+        return redirect('/tags')->with('success','Tag Removed');
+}
 }
