@@ -31,7 +31,7 @@
             @endif
         @endforeach
     @else  
-        <div class="well">
+        <div class="back">
             <h5>No posts found</h5>
         </div>
     @endif
@@ -72,7 +72,7 @@
             @endif
         @endforeach
     @else
-        <div class="well">
+        <div class="back">
             <h5>No posts found</h5>
         </div>
     @endif
@@ -113,6 +113,17 @@
 @endsection
 
 <style>
+
+    .back {
+        background: #f1f1f1;
+        border-width: 0.1px;
+        padding: 0 10px 0 10px;
+        border-style: solid;
+        border-color: lightgray;
+        border-radius: 5px;
+        text-align: center;
+
+    }
 
     div.card {
         border-style: solid;

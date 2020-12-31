@@ -7,8 +7,10 @@
     <h2>{{$title}}</h2>
     <br>
     <p>
-        <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
-        <a class="btn btn-secondary btn-lg" href="/register" role="button">Register</a>
+        @if (Auth::guest())        
+            <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
+            <a class="btn btn-secondary btn-lg" href="/register" role="button">Register</a>
+        @endif
     </p>
 </div>
 </div>

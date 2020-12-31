@@ -37,7 +37,7 @@
             </table>
         @else
         <br>
-            <div class="well">
+            <div class="back">
                 <h5>You have no posts</h5>
             </div>
         @endif        
@@ -47,6 +47,16 @@
 <style>
     div.card-body {
       float: right;
+    }
+
+    .back {
+        background: #f1f1f1;
+        border-width: 0.1px;
+        padding: 0 10px 0 10px;
+        border-style: solid;
+        border-color: lightgray;
+        border-radius: 5px;
+        text-align: center;
     }
 
     </style>
