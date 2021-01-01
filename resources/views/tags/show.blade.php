@@ -14,8 +14,13 @@
 
      <div class="row">
           <div class="col-md-10">
-               <h2>{{$tag->name }} <br><small>{{$numberofposts}} Posts</small></h2>
-          </div>   
+               <h2>{{$tag->name }} 
+                    @if($numberofposts == 1)
+                    <br><small>{{$numberofposts}} Post</small></h2>
+                    @else
+                    <br><small>{{$numberofposts}} Posts</small></h2>
+                    @endif
+               </div>   
           <div class="col-md-2">
                <a href="/tags" class="btn btn-default pull-right" style="margin-top: 20px;">Back</a>
           </div>
